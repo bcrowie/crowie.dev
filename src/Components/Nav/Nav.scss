@@ -1,0 +1,28 @@
+@import "../../Styles/variables.scss";
+
+nav {
+  @include flex(row, space-between);
+
+  background-color: $light;
+  height: $nav-height;
+  position: fixed;
+  width: $section-width;
+  left: 0;
+  z-index: 2;
+
+  .nav-container {
+    @include flex(row, flex-end, center);
+
+    margin: auto;
+    width: $max-width;
+
+    div {
+      position: relative;
+
+      svg {
+        height: $social-height;
+        margin-left: 1em;
+      }
+    }
+  }
+}

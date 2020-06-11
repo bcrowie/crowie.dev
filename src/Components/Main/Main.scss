@@ -1,0 +1,46 @@
+@import "../../Styles/variables.scss";
+
+.main {
+  @include flex(column);
+  height: auto;
+
+  .titles-top {
+    @include flex(row, space-between);
+    margin-top: 8em;
+
+    .titles {
+      @include flex(column, center);
+
+      .name {
+        @include font-large;
+
+        display: block;
+        margin-left: 3.4rem;
+        z-index: 5;
+      }
+
+      .sticky {
+        position: fixed;
+        top: 10px;
+        z-index: 5;
+      }
+      .title-item {
+        @include font-large;
+
+        display: block;
+        -webkit-text-fill-color: $primary-blue;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .titles-bottom {
+    margin: 4em 0.5em;
+    width: $max-width;
+
+    p {
+      color: $primary-blue;
+      font-weight: 900;
+    }
+  }
+}

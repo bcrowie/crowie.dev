@@ -1,0 +1,17 @@
+@import "./Styles/variables.scss";
+
+:root {
+  overflow-x: hidden;
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.App {
+  margin: auto;
+  max-width: $max-width;
+  overflow-x: hidden;
+}

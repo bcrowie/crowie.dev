@@ -1,0 +1,32 @@
+// colors
+$primary-purple: purple;
+$primary-blue: rgb(21, 23, 121);
+$dark-transparent: rgba(0, 0, 0, 0.5);
+$light: white;
+
+// font
+$font-large: 1.5em;
+$font-reg: 1em;
+
+// spacing
+$border: 20px;
+$max-width: 900px;
+$section-width: 100vw;
+$section-height: 100vh;
+
+// nav
+$nav-height: 60px;
+$social-height: 40px;
+
+// mixins
+@mixin font-large {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+
+@mixin flex($dir, $justify: unset, $align-items: unset) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align-items;
+}

@@ -1,0 +1,61 @@
+@import "../../Styles/variables.scss";
+
+.projects {
+  @include flex(column);
+
+  background-color: $primary-blue;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+  height: auto;
+  left: 0;
+  padding: 4rem 0;
+  position: absolute;
+  width: $section-width;
+
+  h1 {
+    text-align: left;
+    color: $light;
+    margin: auto;
+    padding: 4rem 0;
+    width: $max-width;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-gap: 3rem 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: auto;
+    width: $max-width;
+
+    .project {
+      background-color: $light;
+      border-radius: 20px;
+      height: 15em;
+      margin: auto;
+      position: relative;
+      width: 25em;
+
+      a {
+        border-radius: $border;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+
+        .img {
+          border-radius: $border;
+          position: relative;
+
+          .description {
+            @include flex(column, center, center);
+
+            background-color: $dark-transparent;
+            border-radius: $border;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

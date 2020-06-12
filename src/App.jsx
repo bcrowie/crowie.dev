@@ -1,8 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Contact from "./Components/Contact/Contact";
 import Main from "./Components/Main/Main";
 import Nav from "./Components/Nav/Nav";
 import Projects from "./Components/Projects/Projects";
+
 import { BATTLECHESS, THISHUB } from "./constants";
 import "./App.scss";
 
@@ -10,6 +13,7 @@ export const NavTheme = createContext();
 
 const App = () => {
   const [navTheme, setNavTheme] = useState(false);
+
   const handleScroll = () => {
     if (window.scrollY < 229) {
       setNavTheme(false);

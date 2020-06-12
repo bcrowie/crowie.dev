@@ -1,15 +1,17 @@
 import React from "react";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
+
 import Project from "./Project";
-import "./Projects.scss";
+import BattleChess from "../../Images/battlechess.png";
+import Thishub from "../../Images/thishub.png";
+
 import {
   BATTLECHESS,
   BATTLECHESS_DESC,
   THISHUB,
   THISHUB_DESC,
 } from "../../constants";
-import BattleChess from "../../Images/battlechess.png";
-import Thishub from "../../Images/thishub.png";
+import "./Projects.scss";
 
 const Projects = () => {
   const { scrollY } = useViewportScroll();
@@ -17,6 +19,7 @@ const Projects = () => {
 
   return (
     <motion.div className="projects" style={{ y: y1 }}>
+      <div className="border"></div>
       <h1>Projects</h1>
       <div className="project-grid">
         <Project img={Thishub} title={THISHUB} desc={THISHUB_DESC} />

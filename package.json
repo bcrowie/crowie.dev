@@ -13,7 +13,8 @@
     "react-intersection-observer": "^8.26.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-sticky-el": "^2.0.5"
+    "react-sticky-el": "^2.0.5",
+    "websocket-extensions": "^0.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,7 +38,6 @@
     ]
   },
   "description": "The personal portfolio of Brenden Crowie",
-  "main": "index.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
@@ -48,9 +48,5 @@
     "Crowie"
   ],
   "author": "Brenden Crowie",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bcrowie/crowie.dev/issues"
-  },
-  "homepage": "https://github.com/bcrowie/crowie.dev#readme"
+  "license": "ISC"
 }

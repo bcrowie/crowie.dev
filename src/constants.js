@@ -18,6 +18,8 @@ export const THISHUB_DESC = "A social media platform similar to Reddit.";
 
 // STYLES
 export const DARK_BLUE = "rgb(21,23,121)";
+export const DARK_PURPLE = "rgb(128, 0, 128)";
+export const LIGHT_BLUE = "rgb(75, 163, 245)";
 export const LIGHT = "rgb(255,255,255)";
 export const TITLES = [
   "Fullstack Developer",

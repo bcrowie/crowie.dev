@@ -7,9 +7,15 @@
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
   height: auto;
   left: 0;
-  padding: 4rem 0;
+  padding-bottom: 10rem;
   position: absolute;
   width: $section-width;
+
+  .border {
+    background-color: $primary-purple;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 10%);
+    height: 110px;
+  }
 
   h1 {
     text-align: left;
@@ -55,6 +61,10 @@
             width: 100%;
           }
         }
+      }
+
+      &:hover {
+        box-shadow: 0px 4px 15px -2px rgba(2, 2, 2, 0.616);
       }
     }
   }

@@ -1,0 +1,71 @@
+@import "../../Styles/variables.scss";
+
+.contact-container {
+  max-width: $max-width;
+
+  .contact {
+    @include flex(column, center, center);
+
+    background-color: $primary-purple;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+    height: auto;
+    left: 0;
+    margin-top: -20vh;
+    padding-bottom: 4em;
+    width: $section-width;
+
+    h1 {
+      display: inline-block;
+      text-align: left;
+      color: $light;
+      margin: auto;
+      padding: 4rem 0;
+      text-align: left;
+      width: $max-width + 15px;
+    }
+
+    .contact-form {
+      @include flex(column);
+
+      width: 600px;
+      button {
+        background: white;
+        border: none;
+        border-radius: 10px;
+        color: $primary-blue;
+        cursor: pointer;
+        font-weight: 900;
+        margin: 1.2em;
+        padding: 0.6em;
+        transition: all 100ms ease-in-out;
+        &:hover,
+        &:focus,
+        &:active {
+          box-shadow: 0px 4px 15px -2px rgba(2, 2, 2, 0.616);
+        }
+      }
+      form {
+        @include flex(column);
+
+        input,
+        textarea {
+          border: solid 2px $primary-blue;
+          border-radius: 10px;
+          font-size: 1em;
+          margin: 1em;
+          outline: none;
+          padding: 0.6em;
+          transition: all 100ms ease-in-out;
+          &:hover,
+          &:focus,
+          &:active {
+            box-shadow: 0px 4px 15px -2px rgba(2, 2, 2, 0.616);
+          }
+        }
+        textarea {
+          margin: 1.2em;
+        }
+      }
+    }
+  }
+}

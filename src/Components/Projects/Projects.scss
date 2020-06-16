@@ -7,22 +7,23 @@
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
   height: auto;
   left: 0;
-  padding-bottom: 10rem;
-  position: absolute;
+  padding-bottom: 30vh;
   width: $section-width;
 
   .border {
     background-color: $primary-purple;
-    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 10%);
-    height: 110px;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 10%);
+    height: 120px;
   }
 
   h1 {
+    display: inline-block;
     text-align: left;
     color: $light;
     margin: auto;
     padding: 4rem 0;
-    width: $max-width;
+    text-align: left;
+    width: $max-width + 15px;
   }
 
   .project-grid {

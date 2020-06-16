@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import TitleItem from "./TitleItem";
+import { NavTheme } from "../../App";
 import {
   DARK_BLUE,
   INTRODUCTION,
   INTRODUCTION_DESC,
   LIGHT,
+  NAV_DARK,
+  NAV_LIGHT,
   TITLES,
   TITLE_ANIMATE_OPACITY,
   TITLE_ANIMATE_Y,
+  NAV_WHITE,
 } from "../../constants";
-import { NavTheme } from "../../App";
-import TitleItem from "./TitleItem";
 import "./Main.scss";
 
 const Main = () => {
@@ -30,10 +33,8 @@ const Main = () => {
     if (ref.current) {
       if (window.scrollY < 190) {
         setSticky(false);
-      } else if (ref.current.getBoundingClientRect().top <= 2) {
+      } else if (ref.current.getBoundingClientRect().y <= 10) {
         setSticky(true);
-      } else if (ref.current.getBoundingClientRect().top > 3) {
-        setSticky(false);
       }
     }
   };
@@ -48,25 +49,25 @@ const Main = () => {
   }, [nameControls]);
 
   useEffect(() => {
-    if (navState.navTheme) {
-      colorTransition(LIGHT);
-    } else if (!navState.navTheme) {
+    if (navState.navTheme === NAV_WHITE) {
       colorTransition(DARK_BLUE);
+    } else if (
+      navState.navTheme === NAV_DARK ||
+      navState.navTheme === NAV_LIGHT
+    ) {
+      colorTransition(LIGHT);
     }
   }, [navState]);
 
   return (
-    <div className="main">
+    <div className="main container">
       <div className="titles-top">
         <div className="titles">
-          <p className="title-item" style={{ marginLeft: "8px" }}>
-            {INTRODUCTION}
-          </p>
+          <p className="title-item">{INTRODUCTION}</p>
           <motion.p
             animate={nameControls}
             className={`name ${sticky ? "sticky" : ""}`}
             ref={ref}
-            style={{ scale: 1.5 }}
           >
             Brenden Crowie
           </motion.p>

@@ -8,7 +8,10 @@ import {
   GITHUB_LINK,
   LIGHT,
   LINKEDIN_LINK,
-  DARK_PURPLE,
+  LIGHT_BLUE,
+  NAV_DARK,
+  NAV_LIGHT,
+  NAV_WHITE,
 } from "../../constants";
 import SocialLink from "./SocialLink";
 import "./Nav.scss";
@@ -17,39 +20,26 @@ const Nav = () => {
   const navState = useContext(NavTheme);
   const navControls = useAnimation();
   const socialControls = useAnimation();
-
   const transition = { duration: 0.2 };
 
-  const startTransition = (color) => {
+  const startTransition = (backgroundColor, fill) => {
     navControls.start({
-      backgroundColor: color,
+      backgroundColor,
       transition,
     });
     socialControls.start({
-      fill: color === LIGHT ? DARK_BLUE : LIGHT,
+      fill,
       transition,
     });
   };
 
-  const handleSocialHover = (start) => {
-    if (start) {
-      socialControls.start({
-        fill: DARK_PURPLE,
-        transition,
-      });
-    } else {
-      socialControls.start({
-        fill: navState.navTheme ? LIGHT : DARK_BLUE,
-        transition,
-      });
-    }
-  };
-
   useEffect(() => {
-    if (navState.navTheme) {
-      startTransition(DARK_BLUE);
-    } else if (!navState.navTheme) {
-      startTransition(LIGHT);
+    if (navState.navTheme === NAV_LIGHT) {
+      startTransition(LIGHT_BLUE, LIGHT);
+    } else if (navState.navTheme === NAV_WHITE) {
+      startTransition(LIGHT, DARK_BLUE);
+    } else if (navState.navTheme === NAV_DARK) {
+      startTransition(DARK_BLUE, LIGHT);
     }
   }, [navState]);
 

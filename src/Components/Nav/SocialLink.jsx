@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { DARK_BLUE, DARK_PURPLE, LIGHT_BLUE } from "../../constants";
+import { DARK_BLUE, LIGHT_BLUE, NAV_LIGHT } from "../../constants";
 
 const SocialLink = ({ children, navState, link, socialControls }) => {
   return (
@@ -9,7 +9,7 @@ const SocialLink = ({ children, navState, link, socialControls }) => {
       style={{ fill: DARK_BLUE }}
       transition={{ duration: 0.5 }}
       whileHover={{
-        fill: navState ? LIGHT_BLUE : DARK_PURPLE,
+        fill: navState === NAV_LIGHT ? DARK_BLUE : LIGHT_BLUE,
         transition: { duration: 0.2 },
       }}
       href={link}

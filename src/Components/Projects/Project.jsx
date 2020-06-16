@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Project = ({ img, title, desc }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [ref, inView, entry] = useInView({
+  const [ref, inView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });

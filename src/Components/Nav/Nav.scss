@@ -11,11 +11,16 @@ nav {
   z-index: 2;
 
   .nav-container {
-    @include flex(row, flex-end, center);
+    @include flex(row, space-between, center);
 
     margin: auto;
     width: $max-width;
 
+    .name {
+      color: $primary-blue;
+      font-size: 2.75em;
+      margin-left: -10px;
+    }
     div {
       position: relative;
 

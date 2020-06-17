@@ -6,12 +6,19 @@ import Nav from "./Components/Nav/Nav";
 import Projects from "./Components/Projects/Projects";
 import {
   BATTLECHESS,
+  BATTLECHESS_DESC_LONG,
   NAV_DARK,
   NAV_LIGHT,
   NAV_WHITE,
   THISHUB,
+  THISHUB_DESC_LONG,
+  THISHUB_GITHUB_LINK,
+  BATTLECHESS_GITHUB_LINK,
 } from "./constants";
 import "./App.scss";
+import BattleChess from "./Images/battlechess.png";
+import Thishub from "./Images/thishub.png";
+import ProjectOverview from "./Components/ProjectOverview/ProjectOverview";
 
 export const NavTheme = createContext();
 
@@ -35,16 +42,29 @@ const App = () => {
   return (
     <NavTheme.Provider value={{ navTheme, setNavTheme }}>
       <Router>
+        <Nav />
         <Route exact path="/">
           <div className="App">
-            <Nav />
             <Main />
             <Projects />
             <Contact />
           </div>
         </Route>
-        <Route exact path={`/${THISHUB}`} />
-        <Route exact path={`/${BATTLECHESS}`} />
+        <Route path={`/${THISHUB}`}>
+          <ProjectOverview
+            demo={BATTLECHESS_GITHUB_LINK}
+            desc={THISHUB_DESC_LONG}
+            img={Thishub}
+            link={THISHUB_GITHUB_LINK}
+          />
+        </Route>
+        <Route path={`/${BATTLECHESS}`}>
+          <ProjectOverview
+            desc={BATTLECHESS_DESC_LONG}
+            img={BattleChess}
+            link={BATTLECHESS_GITHUB_LINK}
+          />
+        </Route>
       </Router>
     </NavTheme.Provider>
   );

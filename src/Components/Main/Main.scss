@@ -21,7 +21,6 @@
       .sticky {
         position: fixed;
         top: 5px;
-
         z-index: 5;
       }
       .title-item {
@@ -35,12 +34,13 @@
   }
 
   .titles-bottom {
-    margin: 4em 0.5em;
+    margin: 4em 0em;
     width: auto;
 
     p {
       color: $primary-blue;
       font-weight: 900;
+      line-height: 1.5em;
     }
   }
 }

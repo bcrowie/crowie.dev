@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { NavTheme } from "../../App";
 import { ReactComponent as LinkedIn } from "../../Images/linkedin.svg";
@@ -17,6 +18,7 @@ import SocialLink from "./SocialLink";
 import "./Nav.scss";
 
 const Nav = () => {
+  const location = useLocation();
   const navState = useContext(NavTheme);
   const navControls = useAnimation();
   const socialControls = useAnimation();
@@ -50,6 +52,10 @@ const Nav = () => {
       style={{ backgroundColor: LIGHT }}
     >
       <div className="nav-container">
+        <h2 className="name">
+          {location.pathname !== "/" && "Brenden Crowie"}
+        </h2>
+
         <div>
           <SocialLink
             link={LINKEDIN_LINK}

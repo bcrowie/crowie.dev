@@ -34,7 +34,7 @@ const Project = ({ img, title, desc }) => {
       onMouseEnter={() => setIsHovered(!isHovered)}
       onMouseLeave={() => setIsHovered(!isHovered)}
     >
-      <Link to={`/${title}`}>
+      <Link to={`/${title}/#`}>
         <div
           className="img"
           style={{

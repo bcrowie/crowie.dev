@@ -18,6 +18,7 @@ import "./Main.scss";
 
 const Main = () => {
   const [sticky, setSticky] = useState(false);
+  const mobile = window.innerWidth <= 900;
   const nameControls = useAnimation();
   const navState = useContext(NavTheme);
   const ref = useRef(null);
@@ -31,7 +32,10 @@ const Main = () => {
 
   const handleScroll = () => {
     if (ref.current) {
-      if (window.scrollY < 190) {
+      if (
+        (window.scrollY < 190 && !mobile) ||
+        (window.scrollY < 160 && mobile)
+      ) {
         setSticky(false);
       } else if (ref.current.getBoundingClientRect().y <= 10) {
         setSticky(true);
@@ -72,7 +76,7 @@ const Main = () => {
             Brenden Crowie
           </motion.p>
         </div>
-        <div className="titles">
+        <div className={`titles ${sticky ? "sticky-titles" : ""}`}>
           <TitleItem duration={0.5} title={TITLES[0]} />
           <TitleItem duration={0.75} title={TITLES[1]} />
           <TitleItem duration={1} title={TITLES[2]} />

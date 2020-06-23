@@ -9,6 +9,7 @@ const Project = ({ img, title, desc }) => {
     threshold: 0.5,
     triggerOnce: true,
   });
+  const mobile = window.innerWidth <= 900;
 
   const hiddenVariants = {
     visible: { opacity: 1, scale: 1, y: 0 },
@@ -25,39 +26,43 @@ const Project = ({ img, title, desc }) => {
   };
 
   return (
-    <motion.div
-      animate={inView ? "visible" : "hidden"}
-      variants={hiddenVariants}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      ref={ref}
-      className="project"
-      onMouseEnter={() => setIsHovered(!isHovered)}
-      onMouseLeave={() => setIsHovered(!isHovered)}
-    >
-      <Link to={`/${title}/#`}>
-        <div
-          className="img"
-          style={{
-            backgroundImage: `url("${img}")`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            height: "15em",
-            width: "25em",
-            color: "white",
-          }}
-        >
-          <motion.div
-            animate={isHovered ? "open" : "closed"}
-            transition={{ duration: 0.5 }}
-            variants={overlayVariants}
-            className="description"
+    <>
+      {mobile && <h2 className="mobile-title">{title}</h2>}
+      <motion.div
+        animate={inView ? "visible" : "hidden"}
+        variants={hiddenVariants}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+        ref={ref}
+        className="project"
+        onMouseEnter={() => setIsHovered(!isHovered)}
+        onMouseLeave={() => setIsHovered(!isHovered)}
+      >
+        <Link to={`/${title}/#`}>
+          <div
+            className="img"
+            style={{
+              backgroundImage: `url("${img}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              height: `${mobile ? "12em" : "15em"}`,
+              width: `${mobile ? "21em" : "25em"}`,
+              color: "white",
+            }}
           >
-            <h2>{title}</h2>
-            <p>{desc}</p>
-          </motion.div>
-        </div>
-      </Link>
-    </motion.div>
+            <motion.div
+              animate={isHovered ? "open" : "closed"}
+              transition={{ duration: 0.5 }}
+              variants={overlayVariants}
+              className="description"
+            >
+              <h2>{title}</h2>
+              <p>{desc}</p>
+            </motion.div>
+          </div>
+        </Link>
+      </motion.div>
+    </>
   );
 };
 

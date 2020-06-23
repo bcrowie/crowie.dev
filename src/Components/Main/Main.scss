@@ -3,7 +3,7 @@
 .main {
   @include flex(column);
   height: auto;
-
+  margin: auto;
   .titles-top {
     @include flex(row, space-between);
     margin-top: 8em;
@@ -41,6 +41,31 @@
       color: $primary-blue;
       font-weight: 900;
       line-height: 1.5em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin: 0 1em;
+
+    .titles-top {
+      @include flex(column);
+
+      .titles {
+        .name {
+          font-size: 2em;
+          margin-bottom: 2em;
+        }
+        .sticky {
+          position: fixed;
+          top: 10px;
+          margin-bottom: 100px;
+        }
+      }
+      .sticky-titles {
+        padding-top: 6em;
+      }
     }
   }
 }

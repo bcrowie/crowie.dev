@@ -11,61 +11,100 @@
   width: $section-width;
 
   .border {
-    background-color: $primary-purple;
+    background-color: $primary-teal;
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 10%);
     height: 120px;
   }
-
-  h1 {
-    display: inline-block;
-    text-align: left;
-    color: $light;
-    margin: auto;
-    padding: 4rem 0;
-    text-align: left;
-    width: $max-width + 15px;
-  }
-
-  .project-grid {
-    display: grid;
-    grid-gap: 3rem 1rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin: auto;
-    width: $max-width;
-
-    .project {
-      background-color: $light;
-      border-radius: 20px;
-      height: 15em;
+  .project-container {
+    h1 {
+      display: block;
+      color: $light;
       margin: auto;
-      position: relative;
-      width: 25em;
+      // margin-left: 1.5em;
+      padding: 4rem 0;
+      text-align: left;
+      width: $max-width + 15px;
+    }
 
-      a {
-        border-radius: $border;
-        height: 100%;
-        position: absolute;
-        width: 100%;
+    .project-grid {
+      display: grid;
+      grid-gap: 3rem 1rem;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin: auto;
+      width: $max-width;
 
-        .img {
+      // In Project.jsx
+      .project {
+        background-color: $light;
+        border-radius: 20px;
+        height: 15em;
+        margin: auto;
+        position: relative;
+        width: 25em;
+
+        a {
           border-radius: $border;
-          position: relative;
+          height: 100%;
+          position: absolute;
+          width: 100%;
 
-          .description {
-            @include flex(column, center, center);
-
-            background-color: $dark-transparent;
+          .img {
             border-radius: $border;
-            height: 100%;
-            position: absolute;
-            width: 100%;
+            position: relative;
+
+            .description {
+              @include flex(column, center, center);
+
+              background-color: $dark-transparent;
+              border-radius: $border;
+              height: 100%;
+              position: absolute;
+              width: 100%;
+            }
           }
         }
-      }
 
-      &:hover {
-        box-shadow: 0px 4px 15px -2px rgba(2, 2, 2, 0.616);
+        &:hover {
+          box-shadow: 0px 4px 15px -2px rgba(2, 2, 2, 0.616);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .mobile-title {
+    color: $light;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+  }
+
+  .projects {
+    .border {
+      background-color: $primary-teal;
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 10%);
+      height: 210px;
+    }
+
+    .project-container {
+      margin: 0 1em;
+      margin-top: -4em;
+      h1 {
+        margin-left: 0;
+      }
+      .project-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+
+        .project {
+          width: 21em;
+          height: 12em;
+          margin: auto;
+          margin-bottom: 2em;
+        }
       }
     }
   }

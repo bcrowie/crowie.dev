@@ -32,6 +32,7 @@ export const SPOTIFY_TOOL_GITHUB_LINK =
 
 // ------- Thishub
 export const THISHUB = "Thishub";
+export const THISHUB_DEMO_LINK = "https://thishub-web.herokuapp.com/";
 export const THISHUB_DESC = "A social media platform similar to Reddit.";
 export const THISHUB_DESC_LONG =
   "Thishub is a social media platform based on Reddit. The back end api was written with ExpressJS. The server uses Sequelize ORM for queries made to the PostgreSQL database. The front end was written with ReactJS using functional components with hooks, and React Router. The project also includes several other libraries such as BCrypt for password hashing and salting, PassportJS for user authentication, Axios for front end api calls along with many others.";

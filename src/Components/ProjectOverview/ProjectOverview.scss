@@ -1,0 +1,97 @@
+@import "../../Styles/variables.scss";
+
+.overview-container {
+  @include flex(column);
+
+  position: relative;
+  height: auto;
+  top: 50px;
+  left: 0;
+  width: $section-width;
+
+  .overview-background {
+    background-color: $primary-blue;
+    clip-path: polygon(0 20%, 100% 40%, 100% 100%, 0 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: -1;
+
+    .border {
+      background-color: $primary-teal;
+      clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 52%);
+      height: 42%;
+    }
+  }
+
+  .overview {
+    min-height: auto;
+    max-width: $max-width;
+    margin: 0 auto;
+    position: initial;
+
+    .button-container {
+      @include flex(row, flex-start);
+      margin-top: 2em;
+      margin-left: -10px;
+      width: 110px;
+
+      button {
+        @include font-large;
+
+        border: none;
+        background-color: white;
+        color: $primary-blue;
+        cursor: pointer;
+        transition: all 100ms ease-in-out;
+
+        svg {
+          fill: $primary-blue;
+          height: 20px;
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+
+      &:hover {
+        svg,
+        button {
+          color: $primary-teal;
+          fill: $primary-teal;
+        }
+      }
+    }
+    .description {
+      color: $light;
+      border-left: 4px solid $primary-teal;
+      border-bottom: 4px solid $primary-teal;
+      line-height: 1.5em;
+      margin: 10% auto;
+      padding: 2em;
+
+      .github-link {
+        margin-top: 1em;
+
+        a {
+          color: $primary-teal;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .overview-container {
+    .overview {
+      margin: 2em 2em 0 2em;
+
+      .description {
+        margin-top: 4em;
+      }
+    }
+  }
+}

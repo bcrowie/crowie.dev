@@ -18,6 +18,7 @@ import {
   SPOTIFY_TOOL_DESC_LONG,
   SPOTIFY_TOOL_GITHUB_LINK,
   THISHUB,
+  THISHUB_DEMO_LINK,
   THISHUB_DESC_LONG,
   THISHUB_GITHUB_LINK,
 } from "./constants";
@@ -89,7 +90,7 @@ const App = () => {
         </Route>
         <Route path={`/${THISHUB}`}>
           <ProjectOverview
-            demo={BATTLECHESS_GITHUB_LINK}
+            demo={THISHUB_DEMO_LINK}
             desc={THISHUB_DESC_LONG}
             img={Thishub}
             link={THISHUB_GITHUB_LINK}

@@ -1,6 +1,6 @@
 // MAIN
 export const INTRODUCTION = "Hi, I'm";
-export const INTRODUCTION_DESC = `I am full stack software developer and freelance web developer. I specialize in Javascript and React with front end/back end application development. I also have experience in technologies like Python, C# and .Net Framework, MySQL, NoSQL and more. I have over 10 years of professional experience in the Information Technology field including extensive collaboration with DevOps teams.`;
+export const INTRODUCTION_DESC = `I am a full stack software engineer and specialize in Javascript and React with front end and back end application development. I also work with technologies such as Python, C# and .Net Framework, MySQL, NoSQL and more. I have over 10 years of professional experience in the Information Technology field with firms like JPMorgan Chase and Hewlett Packard.`;
 
 // NAV LINKS
 export const GITHUB_LINK = "http://www.github.com/bcrowie";
@@ -46,9 +46,9 @@ export const NAV_WHITE = "white";
 export const NAV_DARK = "dark";
 export const NAV_LIGHT = "light";
 export const TITLES = [
-  "Fullstack Developer",
+  "Full Stack Developer",
   "Freelance Software Engineer",
-  "Something Else",
+  "Technical Enthusiast",
 ];
 export const TITLE_ANIMATE_OPACITY = [0, 0, 0, 0, 0.5, 1];
 export const TITLE_ANIMATE_Y = [
